@@ -25,8 +25,11 @@
 
           <div class="container">
             <div class="row">
+            <div class="card" style="width: 100%;">
+                @if(session()->has('message'))
+                    <div class="alert alert-danger">{{session()->get('message')}}</div>
+                     @endif
               <div class="col-md-12">
-                <div class="card" style="width: 100%;">
                   <div class="card-body">
                    <div class="table-responsive">
                     <table class="table align-items-center" id="datatable-basic">

@@ -5,16 +5,21 @@
         </h2>
     </x-slot>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+ <style>
+     .right{
+          float:right;
+     }
+ </style>
 
    <div class="container">
-   <a href="{{url('/customer/list')}}"  class="btn btn-primary btn-lg">Customer list</a>
+        <a href="{{url('/customer/list')}}"  class="btn btn-primary btn-lg right mt-3">Customers list</a>
          <div class="row">
                 <div class="col-sm-12 mt-5">
-                <div class="card mt-5" style="width:100%;">
-                    @if(session()->has('message'))
+                @if(session()->has('message'))
                     <div class="alert alert-success">{{session()->get('message')}}</div>
                      @endif
+                <div class="card mt-5" style="width:100%;">
+                  
                         <div class="card-body">
                         @if ($errors->any())
                                <div class="alert alert-danger">
@@ -57,6 +62,7 @@
                              <br>
                                
                               <div class="form-group">
+                              <label for="example-number-input" class="form-control-label">Gender</label>
                               <input type="radio" name="gender" value="male" > Male
                               <input type="radio" name="gender" value="female"> Female
                               </div>
